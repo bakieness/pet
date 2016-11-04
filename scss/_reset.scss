@@ -1,0 +1,303 @@
+﻿@import "config";
+
+// reset: http://meyerweb.com/eric/tools/css/reset/
+html, body, div, span, object, iframe, h1, h2, h3, h4, h5, h6, p, 
+blockquote, pre, a, abbr, acronym, address, cite, code, del, dfn, em, 
+img, ins, kbd, q, s, samp, small, strong, sub, sup, var, b, u, i, 
+center, dl, dt, dd, ol, ul, li, fieldset, form, label, legend, table, caption, 
+tbody, tfoot, thead, tr, th, td, article, aside, canvas, details, figcaption, 
+figure, footer, header, hgroup, main, menu, nav, section, summary, time, mark, audio, video
+{
+  border: 0;
+  font: inherit;
+  font-size: 100%;
+  margin: 0;
+  outline: 0;
+  padding: 0;
+  vertical-align: baseline;
+}
+
+main, article, aside, details, figcaption, figure, footer, header, hgroup, menu, nav, section, audio, video, canvas
+{
+  display: block;
+}
+
+body
+{
+  line-height: 1;
+}
+
+blockquote, q
+{
+  quotes: none;
+  &:before, &:after
+  {
+    content: '';
+    content: none;
+  }
+}
+
+:focus
+{
+  outline: none;
+}
+
+table
+{
+  border-collapse: collapse;
+  border-spacing: 0;
+}
+
+abbr[title] 
+{
+  cursor: help;
+}
+
+fieldset 
+{
+	border: 0;
+	display: block;
+	margin: 0;
+	padding: 0;
+	position: static;
+}
+
+legend 
+{
+	left: auto;
+	margin: 0;
+	padding: 0;
+	position: static;
+	top: auto;
+}
+
+address 
+{
+	display: block;
+	font-family: $fontBase;
+	font-style: normal;
+	margin: 0;
+	padding: 0;
+}
+
+// selections
+::-moz-selection
+{
+	background: $colorLink;
+	color: #fff;
+}
+::selection
+{
+	background: $colorLink;
+	color: #fff;
+}
+
+
+// BASE
+h1, h2, h3, h4, h5, h6
+{
+	
+}
+
+h2 
+{
+	
+}
+
+h3 
+{
+	
+}
+
+h4
+{
+	
+}
+
+h5
+{
+	
+}
+
+h6
+{
+	
+}
+
+p 
+{
+  margin: 0;
+  padding: 0 0 15px 0;
+}
+
+a 
+{
+  color: $colorLink;
+  text-decoration: none;
+	&:hover 
+	{
+		color: $colorLinkHover;
+		text-decoration: none;
+	}
+}
+
+em, i
+{
+  font-style: italic;
+}
+
+strong, b 
+{
+	font-weight: bold;
+}
+
+blockquote 
+{
+	
+}
+
+small 
+{
+	color: $colorGrey;
+	font-size: 85%;
+	line-height: 85%;
+}
+
+sub, sup 
+{
+  font-size: 85%;
+  line-height: 0;
+	margin: 0;
+	padding: 0;
+  position: relative;
+  vertical-align: baseline;
+}
+
+sup 
+{
+  top: -0.5em;
+}
+
+sub 
+{
+  bottom: -0.25em;
+}
+
+img 
+{
+  border: 0;
+	display: block;
+	margin: 0 auto;
+	padding: 0;
+	@include transition(opacity .2s);
+	max-width: 100%;
+	a:hover & 
+	{
+		@include opacity();
+	}
+	&:not([alt])
+	{
+		border: 2px dashed red;
+		.cms &, .m-map &
+		{
+			border: 0;
+		}
+	}
+}
+
+figure
+{
+	margin: 0;
+	padding: 0 0 15px 0;
+	text-align: center;
+	figcaption
+	{
+		color: $colorGrey;
+		font-style: italic;
+		margin: 0;
+		padding: 10px 0 0 0;
+	}
+}
+
+button, html input[type="button"], html input[type="reset"], html input[type="submit"] 
+{
+  -webkit-appearance: button;
+}
+
+button::-moz-focus-inner, input::-moz-focus-inner 
+{
+  border: 0;
+	margin: 0;
+  padding: 0;
+}
+	
+table 
+{
+	
+}
+
+ul, ol
+{
+	margin: 0;
+	padding: 0 0 10px 25px;
+	li 
+	{
+		margin: 0;
+		padding: 0 0 5px 0;
+	}
+}
+
+ol 
+{
+	list-style: decimal;
+	ol 
+	{
+		list-style: lower-alpha;
+		ol 
+		{
+			list-style: lower-roman;
+		}
+	}
+}
+
+dl 
+{
+  margin: 0;
+	padding: 0 0 10px 0;
+	dt 
+	{
+		display: block;
+		font-weight: bold;
+		margin: 0;
+		padding: 0 0 5px 0;
+	}
+	dd 
+	{
+		display: block;
+		margin: 0;
+		padding: 0 0 5px 0;
+	}
+}
+
+pre
+{
+	color: $colorRed;
+	font-family: Courier New, Courier, monospace;
+	font-size: 13px;
+	max-height: 300px;
+	line-height: 16px;
+	margin: 0 0 15px 0;
+	overflow: auto;
+	padding: 0;
+	@include mq-min($bpTabletLarge)
+	{
+		max-height: 500px;
+	}
+}
+
+
+// DEBUG
+[name*=" "] 
+{
+	border: 2px solid red !important;
+}

@@ -1,0 +1,18 @@
+﻿<div class="main">
+    <form name="myform" ng-submit="addReminder()" novalidate>
+
+        <fieldset>
+            <select ng-model="pet">
+                <option class="default" value="" disabled selected>Pet</option>
+                <option ng-repeat="pet in pets" value="{{pet.$id}}">{{pet.name}}</option>
+            </select>
+
+            <input id="dateinput" ng-model="dateof" type="date" />
+
+            <textarea ng-model="note" placeholder="Reminder..." rows="5" cols="40"></textarea>
+
+        </fieldset>
+
+        <button type="submit" class="btn" ng-disabled="myform.$invalid">ADD</button>
+    </form>
+</div>

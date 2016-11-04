@@ -1,0 +1,269 @@
+﻿// default colours
+$colorBase: #333;
+$colorBlack: #000;
+$colorWhite: #fff;
+$colorRed: red;
+$colorGreen: #107c10;
+$colorYellow: yellow;
+$colorBlue: blue;
+
+// site colors
+$colorMain: #00aaff;//#3676e8;
+
+// links
+$colorLink: #adadad;
+$colorLinkHover: #0083cb;
+
+// 50 shades
+$colorGrey: #888;
+$colorDarkGrey: #333;
+$colorLightGrey: #aaa;
+$colorBorder: #ddd;
+
+// fonts
+$fontBase: Helvetica, Arial, Verdana, sans-serif;
+$fontSize: 14px;
+$fontHeight: 20px;
+
+// responsive breakpoints
+$maxPageWidth: 1200px;
+$bpMobileLarge: 500px; // for 480px
+$bpTablet: 560px; // for 540px
+$bpTabletLarge: 788px; // for 768px
+$bpDesktop: 980px; // for 960px;
+$bpDesktopLarge: 1155px; // for 1135px
+$bpLarge: $maxPageWidth + 20; // for 1272px
+
+// mixins
+
+@mixin sitemap($a)
+{
+	left: $a;
+}
+
+@mixin min-height($a: 5px) 
+{
+  min-height: $a;
+  height: auto !important;
+  height: $a;
+}
+
+@mixin opacity($a: .8) 
+{
+  opacity: $a;
+	$ie: $a * 100;
+  -ms-filter: "progid:DXImageTransform.Microsoft.Alpha(Opacity=" + $ie + ")";
+  filter: alpha(opacity=$ie);
+}
+
+@mixin gradient-vertical($b: #eee, $a: #fff) 
+{
+  background-color: $a;
+  background-image: -webkit-gradient(linear, left top, left bottom, from($b), to($a));
+  background-image: -webkit-linear-gradient(top, $b, $a);
+  background-image:    -moz-linear-gradient(top, $b, $a);
+  background-image:     -ms-linear-gradient(top, $b, $a);
+  background-image:      -o-linear-gradient(top, $b, $a);
+  background-image:         linear-gradient(top, $b, $a);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$b}', EndColorStr='#{$a}');
+}
+
+@mixin gradient-horizontal($b: #eee, $a: #fff) 
+{
+  background-color: $a;
+  background-image: -webkit-gradient(linear, left top, right top, from($b), to($a));
+  background-image: -webkit-linear-gradient(left, $b, $a);
+  background-image:    -moz-linear-gradient(left, $b, $a);
+  background-image:     -ms-linear-gradient(left, $b, $a);
+  background-image:      -o-linear-gradient(left, $b, $a);
+  background-image:         linear-gradient(left, $b, $a);
+  filter: progid:DXImageTransform.Microsoft.gradient(GradientType=0,StartColorStr='#{$b}', EndColorStr='#{$a}');
+}
+
+@mixin transition($a...) 
+{
+  -moz-transition: $a;
+  -o-transition: $a;
+  -webkit-transition: $a;
+  transition: $a;
+}
+
+@mixin transform-origin($a) 
+{
+  -moz-transform-origin: $a;
+  -ms-transform-origin: $a;
+  -o-transform-origin: $a;
+  -webkit-transform-origin: $a;
+  transform-origin: $a;
+}
+
+@mixin animation($a)
+{
+  -moz-animation: $a;
+  -o-animation: $a;
+  -webkit-animation: $a;
+  animation: $a;
+}
+
+@mixin animation-pause()
+{
+  -moz-animation-play-state: paused;
+  -o-animation-play-state: paused;
+  -webkit-animation-play-state: paused;
+  animation-play-state: paused;
+}
+
+@mixin background-size($a: 100% auto) 
+{
+	background-size: $a;
+}
+
+@mixin background-clip($a: padding-box) 
+{
+  -moz-background-clip: $a;
+  -webkit-background-clip: $a;
+  background-clip: $a;
+}
+
+@mixin box-shadow($a: 1px 1px 2px 0 rgba(0,0,0,.08))
+{
+  box-shadow: $a;
+}
+
+@mixin box-sizing($a: border-box)
+{
+	-moz-box-sizing: $a;
+	-webkit-box-sizing: $a;
+	box-sizing: $a;
+}
+
+@mixin border-radius($a: 2px)
+{
+	border-radius: $a;
+}
+
+@mixin border-radius-adv($tl: 2px, $tr: 2px, $bl: 2px, $br: 2px)
+{
+  border-top-right-radius: $tr;
+  border-bottom-right-radius: $br;
+  border-bottom-left-radius: $bl;
+  border-top-left-radius: $tl;
+  @include background-clip();
+}
+
+@mixin text-shadow($a: 1px 1px 1px rgba(0,0,0,.2))
+{
+	text-shadow: $a;
+}
+
+@mixin text-overflow($a: ellipsis)
+{
+	overflow: hidden;
+	-ms-text-overflow: $a;
+	-o-text-overflow: $a;
+	text-overflow: $a;
+	white-space: nowrap;
+}
+
+@mixin text-hidden()
+{
+	overflow: hidden;
+	text-indent: -9999px;
+}
+
+@mixin remove-text-hidden()
+{
+	overflow: visible;
+	text-indent: 0;
+}
+
+@mixin text-size-adjust($a: 100%)
+{
+  -moz-text-size-adjust: 100%;
+	-ms-text-size-adjust: 100%;
+  -webkit-text-size-adjust: 100%;
+	text-size-adjust: 100%;
+}
+
+@mixin placeholder-text($a: $colorGrey, $b: rgba(0,0,0,.75))
+{
+	&:-moz-placeholder
+	{
+		color: $a;
+		color: $b;
+	}
+	&::-moz-placeholder
+	{
+		color: $a;
+		color: $b;
+	}
+	&:-ms-input-placeholder
+	{
+		color: $a;
+		color: $b;
+	}
+	&::-webkit-input-placeholder
+	{
+		color: $a;
+		color: $b;
+	}
+}
+
+@mixin transform($a)
+{
+  -moz-transform: $a;
+	-ms-transform: $a;
+  -o-transform: $a;
+  -webkit-transform: $a;
+  transform: $a;
+}
+
+@mixin rotate($a: -5deg)
+{
+	@include transform(rotate($a));
+}
+
+@mixin user-select($a: none)
+{
+	-moz-user-select: $a;
+	-ms-user-select: $a;
+	-webkit-user-select: $a;
+	user-select: $a;
+}
+
+// media queries
+$mq: false !default;
+@mixin mq-min($a)
+{
+	@if $mq
+	{
+		@if $mq >= $a
+		{
+			@content;
+		}
+	}
+	@else
+	{
+		@media screen and (min-width: $a) 
+		{
+			@content;
+    }
+	}
+}
+@mixin mq-max($a)
+{
+	@if $mq
+	{
+		@if $mq <= $a
+		{
+			@content;
+		}
+	}
+	@else
+	{
+		@media screen and (max-width: $a) 
+		{
+			@content;
+    }
+	}
+}

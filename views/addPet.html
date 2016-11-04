@@ -1,0 +1,39 @@
+﻿<div class="main">
+    <form name="myform" ng-submit="addPet()" novalidate>
+
+        <fieldset>
+            <input type="text" name="firstname" placeholder="name" ng-model="petName" ng-required="true" />
+            <p class="error validationerror" ng-show="myform.firstname.$invalid && myform.firstname.$touched">Enter first name</p>
+
+            <input type="number" name="age" placeholder="age" ng-model="petAge" ng-required="true"/>
+            <p class="error validationerror" ng-show="myform.age.$invalid && myform.age.$touched">Enter age</p>
+
+            <select ng-model="petTime">
+                <option class="default" value="" disabled selected> </option>
+                <option value="months">Months</option>
+                <option value="years">Years</option>
+            </select>
+
+            <select ng-model="petAnimal">
+                <option class="default" value="" disabled selected>animal</option>
+                <option value="Cat">Cat</option>
+                <option value="Dog">Dog</option>
+                <option value="Rabbit">Rabbit</option>
+            </select>
+
+            <input type="text" name="weight" placeholder="weight" ng-model="petWeight" ng-required="true" />
+            <p class="error validationerror" ng-show="myform.age.$invalid && myform.age.$touched">Enter age</p>
+
+            <select ng-model="petGender">
+                <option class="default" value="" disabled selected>gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <textarea ng-model="petNote" placeholder="additional notes..." rows="10" cols="40"></textarea>
+
+        </fieldset>
+
+        <button type="submit" class="btn" ng-disabled="myform.$invalid">ADD</button>
+    </form>
+</div>

@@ -1,0 +1,17 @@
+﻿@import "config";
+
+// clearfix
+.clearfix:after, .form-wrapper:after, .form-row:after, .form-action:after, .cms:after
+{
+  clear: both;
+  content: "";
+  display: block;
+  font-size: 0;
+  height: 0;
+  visibility: hidden;
+}
+
+* html .clearfix, * html .form-wrapper, * html .form-row, * html .form-action, * html .cms
+{
+  height: 1%;
+}

@@ -1,0 +1,32 @@
+﻿<div class="main">
+    <form name="myform" ng-submit="editPet(whichpet)" novalidate>
+        <fieldset>
+            <input type="text" name="firstname" placeholder="name" ng-model="pet.name" ng-required="true" />
+            <p class="error validationerror" ng-show="myform.firstname.$invalid && myform.firstname.$touched">Enter first name</p>
+
+            <input type="number" name="age" placeholder="age" ng-model="pet.age" ng-required="true"/>
+            <p class="error validationerror" ng-show="myform.age.$invalid && myform.age.$touched">Enter age</p>
+
+            <select ng-model="pet.animal">
+                <option class="default" value="" disabled selected>animal</option>
+                <option value="Cat">Cat</option>
+                <option value="Dog">Dog</option>
+                <option value="Rabbit">Rabbit</option>
+            </select>
+
+            <input type="text" name="weight" placeholder="weight" ng-model="pet.weight" ng-required="true" />
+            <p class="error validationerror" ng-show="myform.age.$invalid && myform.age.$touched">Enter age</p>
+
+            <select ng-model="pet.gender">
+                <option class="default" value="" disabled selected>gender</option>
+                <option value="Male">Male</option>
+                <option value="Female">Female</option>
+            </select>
+
+            <textarea ng-model="pet.notes" placeholder="additional notes..." rows="10" cols="40"></textarea>
+
+        </fieldset>
+
+        <button type="submit" class="btn" ng-disabled="myform.$invalid">UPDATE</button>
+    </form>
+</div>

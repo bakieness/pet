@@ -1,0 +1,150 @@
+﻿@import "config";
+
+// visibility
+
+.offscreen
+{
+	height: 0;
+  left: -9999px;
+  margin: 0;
+  overflow: hidden;
+  padding: 0;
+  position: absolute;
+  text-indent: -9999px;
+  width: 0;
+  z-index: -1;
+}
+
+.hide
+{
+	display: none;
+}
+
+.hide-on-touch
+{
+	.touch &
+	{
+		display: none;
+	}
+}
+
+.hide-on-no-touch
+{
+	.no-touch &
+	{
+		display: none;
+	}
+}
+
+.hide-on-mobile
+{
+	@include mq-max($bpMobileLarge - 1)
+	{
+		display: none;
+	}
+}
+
+.hide-on-mobile-large
+{
+	@include mq-min($bpMobileLarge)
+	{
+		@include mq-max($bpTablet - 1)
+		{
+			display: none;
+		}
+	}	
+}
+
+.hide-on-tablet
+{
+	@include mq-min($bpTablet)
+	{
+		@include mq-max($bpTabletLarge - 1)
+		{
+			display: none;
+		}
+	}	
+}
+
+.hide-on-tablet-large
+{
+	@include mq-min($bpTabletLarge)
+	{
+		@include mq-max($bpDesktop - 1)
+		{
+			display: none;
+		}
+	}	
+}
+
+.hide-on-desktop
+{
+	@include mq-min($bpDesktop)
+	{
+		@include mq-max($bpDesktopLarge - 1)
+		{
+			display: none;
+		}
+	}
+}
+
+.hide-on-desktop-large
+{
+	@include mq-min($bpDesktopLarge)
+	{
+		@include mq-max($bpLarge - 1)
+		{
+			display: none;
+		}
+	}
+}
+
+.hide-on-large
+{
+	@include mq-min($bpLarge)
+	{
+		display: none;
+	}
+}
+
+// js
+
+.hide-on-js
+{
+	.js & 
+	{
+		display: none;
+	}
+}
+
+.show-on-js
+{
+	.no-js &
+	{
+		display: none;
+	}
+}
+
+// alignment
+
+.align-center
+{
+	text-align: center;
+}
+
+.align-right
+{
+	text-align: right;
+}
+
+.align-justify
+{
+	text-align: justify;
+}
+
+// ends
+
+.last
+{
+	padding-bottom: 0;
+}

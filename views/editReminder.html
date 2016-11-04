@@ -1,0 +1,11 @@
+﻿<div class="main">
+    <form name="myform" ng-submit="editReminder(reminder.$id)" novalidate>
+        <fieldset>
+            <input id="dateinput" ng-model="reminder.date" type="date" />
+            <textarea ng-model="reminder.note" placeholder="Reminder..." rows="5" cols="40"></textarea>
+
+        </fieldset>
+
+        <button type="submit" class="btn" ng-disabled="myform.$invalid">UPDATE</button>
+    </form>
+</div>

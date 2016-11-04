@@ -1,0 +1,77 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Name>Angular_Template</Name>
+    <ProjectGuid>f9a2ec2a-9372-434d-a6f9-8f3680b07190</ProjectGuid>
+    <OutputType>Library</OutputType>
+    <RootNamespace>Angular_Template</RootNamespace>
+    <ProjectTypeGuids>{A0786B88-2ADB-4C21-ABE8-AA2D79766269}</ProjectTypeGuids>
+    <AssemblyName>Angular_Template</AssemblyName>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Debug' ">
+    <IncludeDebugInformation>true</IncludeDebugInformation>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)' == 'Release' ">
+    <IncludeDebugInformation>false</IncludeDebugInformation>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="js\" />
+    <Folder Include="css\" />
+    <Folder Include="js\scripts\" />
+    <Folder Include="images\" />
+    <Folder Include="views\" />
+    <Folder Include="php\" />
+    <Folder Include="scss\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="compilerconfig.json" />
+    <Content Include="compilerconfig.json.defaults">
+      <SubType>Content</SubType>
+      <DependentUpon>compilerconfig.json</DependentUpon>
+    </Content>
+    <Content Include="css\site.css" />
+    <Content Include="index.html" />
+    <Content Include="js\app.js" />
+    <Content Include="js\controller.js" />
+    <Content Include="js\scripts\angular-animate.js" />
+    <Content Include="js\scripts\angular-animate.min.js" />
+    <Content Include="js\scripts\angular-animate.min.js.map" />
+    <Content Include="js\scripts\angular-aria.js" />
+    <Content Include="js\scripts\angular-aria.min.js" />
+    <Content Include="js\scripts\angular-aria.min.js.map" />
+    <Content Include="js\scripts\angular-cookies.js" />
+    <Content Include="js\scripts\angular-cookies.min.js" />
+    <Content Include="js\scripts\angular-cookies.min.js.map" />
+    <Content Include="js\scripts\angular-csp.css" />
+    <Content Include="js\scripts\angular-loader.js" />
+    <Content Include="js\scripts\angular-loader.min.js" />
+    <Content Include="js\scripts\angular-loader.min.js.map" />
+    <Content Include="js\scripts\angular-message-format.js" />
+    <Content Include="js\scripts\angular-message-format.min.js" />
+    <Content Include="js\scripts\angular-message-format.min.js.map" />
+    <Content Include="js\scripts\angular-messages.js" />
+    <Content Include="js\scripts\angular-messages.min.js" />
+    <Content Include="js\scripts\angular-messages.min.js.map" />
+    <Content Include="js\scripts\angular-mocks.js" />
+    <Content Include="js\scripts\angular-resource.js" />
+    <Content Include="js\scripts\angular-resource.min.js" />
+    <Content Include="js\scripts\angular-resource.min.js.map" />
+    <Content Include="js\scripts\angular-route.js" />
+    <Content Include="js\scripts\angular-route.min.js" />
+    <Content Include="js\scripts\angular-route.min.js.map" />
+    <Content Include="js\scripts\angular-sanitize.js" />
+    <Content Include="js\scripts\angular-sanitize.min.js" />
+    <Content Include="js\scripts\angular-sanitize.min.js.map" />
+    <Content Include="js\scripts\angular-scenario.js" />
+    <Content Include="js\scripts\angular-touch.js" />
+    <Content Include="js\scripts\angular-touch.min.js" />
+    <Content Include="js\scripts\angular-touch.min.js.map" />
+    <Content Include="js\scripts\angular.js" />
+    <Content Include="js\scripts\angular.min.js" />
+    <Content Include="js\scripts\angular.min.js.map" />
+    <Content Include="js\scripts\errors.json" />
+    <Content Include="js\scripts\version.json" />
+    <Content Include="scss\site.scss" />
+  </ItemGroup>
+</Project>

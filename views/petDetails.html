@@ -1,0 +1,39 @@
+﻿<div class="main">
+    <a class="button edit" href="#/editPet/{{whichpet}}">
+
+    </a>
+    <div class="details">
+        <h1 class="primary">
+            <strong>{{pet.name}}</strong>
+        </h1>
+        <p class="secondary">
+            <strong>Age</strong>: {{pet.age}}
+        </p>
+        <p class="secondary">
+            <strong>Animal</strong>: {{pet.animal}}
+        </p>
+        <p class="secondary">
+            <strong>Weight</strong>: {{pet.weight}}
+        </p>
+        <p class="secondary">
+            <strong>Gender</strong>: {{pet.gender}}
+        </p>
+        <p class="secondary">
+            <strong>Notes</strong>: {{pet.notes}}
+        </p>
+        <p class="secondary">
+            <strong>Upcoming</strong>:
+        </p>
+        <div class="reminder" ng-repeat="reminder in reminders | orderObjectBy:'date':false">
+            <p class="date">{{reminder.date | date: "dd-MM-yyyy"}}</p>
+            <p class="note">{{reminder.note}}</p>
+            <a class="button edit mini" href="#/editReminder/{{whichpet}}/{{reminder.$id}}"></a>
+            <a class="button delete mini">
+                <span title="Delete" ng-click="deleteReminder(reminder.$id)"></span>
+            </a>
+        </div>
+        <form action="#/addReminder">
+            <button type="submit" class="btn">+ Reminder</button>
+        </form>
+    </div>
+</div>
